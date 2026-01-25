@@ -1,0 +1,19 @@
+{
+   "name": "astro",
+   "type": "module",
+   "version": "0.0.1",
+   "scripts": {
+      "clean": "del dist",
+      "dev": "astro dev",
+      "start": "astro dev",
+      "build": "npm run clean && astro build",
+      "preview": "npm run clean && npm run build && astro preview",
+      "astro": "astro"
+   },
+   "dependencies": {
+      "astro": "^5.16.15",
+      "astro-meta-tags": "^0.4.0",
+      "del-cli": "^7.0.0",
+      "sass": "^1.97.3"
+   }
+}

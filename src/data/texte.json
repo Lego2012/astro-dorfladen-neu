@@ -1,0 +1,39 @@
+{
+   "home": {
+      "oben": {
+         "links": {
+            "header": "Unser motiviertes Team ist für Sie da!",
+            "back": "Über uns",
+            "text": "Freuen Sie sich auf unsere tollen Angebote und die schöne Atmosphäre. <strong>Übrigens:</strong> Nicht nur der Kaffee ist super, sondern auch unser Café!"
+         },
+         "mitte": {
+            "header": "Wir feierten unseren<br>11. Geburtstag!",
+            "back": "Angebote",
+            "text": "In 2026 gehen wir schon in's 12. Jahr und sind sehr stolz auf das Erreichte."
+         },
+         "rechts": {
+            "header": "Kommen Sie herein und schauen Sie mal...",
+            "back": "Angebote",
+            "text": "Es gibt immer etwas zu entdecken. Wir helfen Ihnen gern und zeigen Ihnen, wo Sie alles finden."
+         }
+      },
+      "unten": {
+         "links": {
+            "header": "Das Schulgebäude in Grohnde",
+            "back": "Der Dorfladen",
+            "text": "Jetzt erstrahlt das Schulgebäude in neuem Glanz und wird zu einem interessanten und lebhaften Kommunikationszentrum in Grohnde. Ach ja, und so ganz nebenbei können Sie bei uns auch <a href=\"/angebote\">einkaufen</a>."
+         },
+         "mitte": {
+            "header": "Unser Bäcker Wegener wartet auf Sie",
+            "back": "Webseite Wegener",
+            "text": "Immer frisches Brot und frische Brötchen von einem der besten Bäcker? Kein Problem. Wenn Sie Frühausteher sind, bekommen Sie die <strong>Brötchen am Sonntag bereits ab 7.30 Uhr</strong>."
+         },
+         "rechts": {
+            "header": "Gleich nebenan = Schulte Fleischerei & Catering",
+            "back": "Webseite Schulte",
+            "text": "Immer frisches Fleisch und frische Wurst von einem der besten Schlachter! <strong>Die aktuellen Angebote finden Sie immer auf der <strong><a href=\"/angebote#schulte\">Angebotsseite</a></strong>."
+         }
+      }
+   },
+   "grussformel": "Das gesamte Schulte-Team bedankt sich für Ihr Vertrauen im Jahr 2025 und wünscht Ihnen Gesundheit, Glück und Zufriedenheit für 2026"
+}

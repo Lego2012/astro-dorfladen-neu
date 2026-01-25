@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Message from "../components/homepage/Message.astro";
+
+// BANNER
+import Banner from "../components/homepage/Banner.astro";
+// OBERE REIHE BOXEN
+import Boxoben from "../components/homepage/Boxen-oben.astro";
+// UNTERE REIHE BOXEN
+import Boxunten from "../components/homepage/Boxen-unten.astro";
+// ANKÜNDIGUNGEN
+import Ankuendigungen from "../components/Ankuendigungen.astro";
+// ÖFFNUNGSZEITEN
+import Oeffnung from "../components/Oeffnungszeiten.astro";
+---
+
+<Layout>
+   <!-- BANNER -->
+   <Banner />
+
+   <Message
+      headline="Entdecken Sie den Dorfladen in Grohnde"
+      subheadline="Die aktuellen Angebote"
+   />
+   <section class="content">
+      <div class="container">
+         <div class="inner-page homepage margin-bottom-none">
+            <section class="car-block-wrap">
+               <div class="container">
+                  <!-- OBERE REIHE BOXEN -->
+                  <Boxoben />
+                  <!-- ANKÜNDIGUNGEN -->
+                  <Ankuendigungen />
+               </div>
+            </section>
+            <section class="car-block-wrap padding-bottom-60 padding-top-60">
+               <div class="container">
+                  <!-- UNTERE REIHE BOXEN -->
+                  <Boxunten />
+               </div>
+            </section>
+            <div class="row parallax_parent design_2">
+               <div
+                  class="parallax_scroll clearfix"
+                  data-velocity="-.5"
+                  data-offset="-200"
+               >
+                  <div class="overlay">
+                     <div class="container">
+                        <!-- ÖFFNUNGSZEITEN -->
+                        <Oeffnung />
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- DORFLADEN MAP STATISCH -->
+   <img src="/images/map-start.png" alt="Map Dorfladen in Grohnde" />
+</Layout>

@@ -1,0 +1,213 @@
+---
+import gruss from "../data/texte.json";
+
+// Karfreitag Text wieder rausnehmen
+
+const menuplan = {
+   jahr: "26",
+   kw: "01",
+   vom: "29.12.25 bis 2.1.26",
+   link_text: "Zu Schulte's Angeboten",
+};
+
+const menus = {
+   besonderheit: "",
+   montag: {
+      menu1: {
+         name: "Gyrosbraten",
+         zutaten: "mit Sauce, Reis und Krautsalat",
+         preis: "8,50",
+      },
+      menu2: {
+         name: "",
+         zutaten: "",
+         preis: "",
+      },
+   },
+   dienstag: {
+      menu1: {
+         name: "Putenschnitzel",
+         zutaten: "mit Sauce, Gemüse und Nudeln",
+         preis: "8,50",
+      },
+      menu2: {
+         name: "",
+         zutaten: "",
+         preis: "",
+      },
+   },
+   mittwoch: {
+      menu1: {
+         name: "Magerer Schweinebraten",
+         zutaten: "mit Sauce, Brokkoli und Gratin",
+         preis: "8,50",
+      },
+      menu2: {
+         name: "",
+         zutaten: "",
+         preis: "",
+      },
+   },
+   freitag: {
+      menu1: {
+         name: "Kasseler Nacken",
+         zutaten: "mit Sauce, Sauerkraut und Salzkartoffeln",
+         preis: "8,50",
+      },
+      menu2: {
+         name: "Putengulasch",
+         zutaten: "mit Reis und Salat",
+         preis: "8,50",
+      },
+   },
+};
+---
+
+<style>
+   #menu {
+      border-top: 1px solid grey;
+      padding-top: 8rem;
+      margin-top: 8rem;
+   }
+   .menuplan-subhead {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+   }
+   p.h3 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+   }
+   .well {
+      background-color: #fbfbfb;
+   }
+   .menus {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+   }
+   .menus .well {
+      width: 100%;
+   }
+   .text-center > .h3 {
+      background-color: #c7c7c7;
+   }
+</style>
+
+<div id="menu" class="col-xs-12">
+   <div class="row padding-bottom-40">
+      <div class="text-center padding-bottom-40">
+         <p class="h2 padding-top-30">Hmmmmmmm!</p>
+         <!-- SCHULTE MENÜPLAN HEADER -->
+         <p class="h2">Ihr Menüplan vom {menuplan.vom}</p>
+         <a href="#angebote">{menuplan.link_text}</a>
+      </div>
+      <div class="col-xs-12">
+         <div class="clearfix">
+            <!-- MONTAG -->
+            <div class="text-center">
+               <p class="h3">Montag</p>
+               <!-- MENÜ 1 -->
+               <div class="menus">
+                  <div class="well">
+                     <p class="menuplan-ueberschrift">
+                        {menus.montag.menu1.name}
+                     </p>
+                     <p class="menuplan-subhead">
+                        {menus.montag.menu1.zutaten}
+                     </p>
+                     <p class="h3">
+                        für {menus.montag.menu1.preis} €
+                     </p>
+                  </div>
+               </div>
+            </div>
+
+            <!-- DIENSTAG -->
+            <div class="text-center">
+               <p class="h3">Dienstag</p>
+               <!-- MENÜ 1 -->
+               <div class="menus">
+                  <div class="well">
+                     <p class="menuplan-ueberschrift">
+                        {menus.dienstag.menu1.name}
+                     </p>
+                     <p class="menuplan-subhead">
+                        {menus.dienstag.menu1.zutaten}
+                     </p>
+                     <p class="h3">
+                        für {menus.dienstag.menu1.preis} €
+                     </p>
+                  </div>
+               </div>
+            </div>
+
+            <!-- MITTWOCH -->
+            <div class="text-center">
+               <p class="h3">Mittwoch</p>
+               <!-- MENÜ 1 -->
+               <div class="menus">
+                  <div class="well">
+                     <p class="menuplan-ueberschrift">
+                        {menus.mittwoch.menu1.name}
+                     </p>
+                     <p class="menuplan-subhead">
+                        {menus.mittwoch.menu1.zutaten}
+                     </p>
+                     <p class="h3">
+                        für {menus.mittwoch.menu1.preis} €
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <!-- FREITAG -->
+            <div class="text-center">
+               <p class="h3">Freitag</p>
+               <!-- MENÜ 1 -->
+               <div class="menus">
+                  <div class="well">
+                     <p class="menuplan-ueberschrift">
+                        {menus.freitag.menu1.name}
+                     </p>
+                     <p class="menuplan-subhead">
+                        {menus.freitag.menu1.zutaten}
+                     </p>
+                     <p class="h3">
+                        für {menus.freitag.menu1.preis} €
+                     </p>
+                  </div>
+               </div>
+               <!-- MENÜ 2 -->
+               <div class="menus">
+                  <div class="well">
+                     <p class="menuplan-ueberschrift">
+                        {menus.freitag.menu2.name}
+                     </p>
+                     <p class="menuplan-subhead">
+                        {menus.freitag.menu2.zutaten}
+                     </p>
+                     <p class="h3">
+                        für {menus.freitag.menu2.preis} €
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- DOWNLOAD SCHULTE MENUPLAN -->
+         <div class="well download-button text-center">
+            <p set:html={gruss.grussformel} />
+            <p>Familie Werner Schulte & Mitarbeiter</p>
+            <p>TELEFON:</p>
+            <p>
+               Hameln: 05151 / 3665<br />Hess. Oldendorf: 05152 / 527411<br
+               />Zersen: 05152 / 8748
+            </p>
+            <a
+               class="btn btn-primary"
+               href={`/angebote/schulte/menuplan-kw-${menuplan.kw}-${menuplan.jahr}.pdf`}
+               >Den Menüplan als PDF runterladen</a
+            >
+         </div>
+      </div>
+   </div>
+</div>

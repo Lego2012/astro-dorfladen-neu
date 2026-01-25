@@ -1,0 +1,172 @@
+---
+import gruss from "../data/texte.json";
+
+const angebot = {
+   jahr: "25",
+   kw: "51",
+   vom: "16.12. bis 24.12.25",
+   angebot_header: "Empfehlungen Ihrer",
+   angebot_subheader: "Weihnachtsfleischerei",
+   link_text: "Zu Schulte's Menüplan",
+};
+
+const angebote = [
+   {
+      name: "Wildschweinkeule ohne Knochen",
+      zutaten: "als Braten oder geschnitten als Gulasch",
+      preis: "2,79",
+      einheit: "100g",
+   },
+   {
+      name: "Winterzeit - Filet",
+      zutaten:
+         "gefülltes Schweinefilet im Speckmantel mit Pistazien und Aprikosen",
+      preis: "2,19",
+      einheit: "100g",
+   },
+   {
+      name: "Walnusssalami",
+      zutaten: "unsere mit Rotwein verfeinerte Rohwurstspezialität",
+      preis: "3,59",
+      einheit: "100g",
+   },
+   {
+      name: "Roastbeef Aufschnitt",
+      zutaten: "medium gebraten, Bratenaufschnitt der Spitzenklasse",
+      preis: "4,79",
+      einheit: "100g",
+   },
+   {
+      name: "Lachsfrischkäse",
+      zutaten: "der leckere Brotaufstrich",
+      preis: "2,39",
+      einheit: "100g",
+   },
+   {
+      name: "Geflügelsalat",
+      zutaten: "ein festlicher Genuss",
+      preis: "2,29",
+      einheit: "100g",
+   },
+];
+
+const tueteVorhanden = false;
+const tuete = {
+   eins: "4 Wiener Würstchen",
+   zwei: "200 g Kartoffelsalat",
+   einheit: "Tüte",
+   preis: "6,00",
+};
+---
+
+<style>
+   #schulte {
+      border-top: 1px solid grey;
+      padding-top: 8rem;
+      margin-top: 8rem;
+   }
+   .abstand-oben-5 {
+      margin-top: 8rem;
+   }
+   .abstand-oben-3 {
+      margin-top: 3rem;
+   }
+   .well {
+      background-color: #fbfbfb;
+   }
+   .angebote {
+      max-width: 80%;
+   }
+   span.zeitraum {
+      font-size: 1.5rem;
+      color: #666;
+   }
+</style>
+
+<div id="schulte" class="row">
+   <div id="angebote" class="col-xs-12">
+      <!-- ANCHOR - Row -->
+      <div class="row padding-bottom-40">
+         <div class="text-center padding-bottom-40">
+            <a href="https://www.schulte-schmeckt.de">
+               <img
+                  class="angebote"
+                  src="/downloads/schulte-angebote.jpg"
+                  alt="Schulte Fleischerei und Catering"
+               />
+            </a>
+            <!-- ANCHOR - SCHULTE ANGEBOTE HEADER -->
+            <p class="h2 abstand-oben-3">
+               {angebot.angebot_header}
+            </p>
+            <p class="h2">
+               {angebot.angebot_subheader}
+            </p>
+            <p class="text-center h2 padding-top-10">
+               vom {angebot.vom}
+            </p>
+            <a href="#menu">{angebot.link_text}</a>
+         </div>
+         <!-- ANCHOR - ANGEBOTE LOOP -->
+         {
+            angebote.map(({ name, zutaten, einheit, preis }) => (
+               <div class="clearfix well angebote">
+                  <div>
+                     <div class="col-xs-6">
+                        <p class="angebot-ueberschrift">{name}</p>
+                        <p class="angebot-subhead">{zutaten}</p>
+                     </div>
+                     <div class="col-xs-6">
+                        <p class="angebot-preis">
+                           {einheit} = {preis} €
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            ))
+         }
+         <!-- ANCHOR - SPARTÜTE -->
+         {
+            tueteVorhanden && (
+               <div class="clearfix well angebote">
+                  <div>
+                     <div class="col-xs-6">
+                        <p class="angebot-ueberschrift">
+                           <strong>
+                              Schulte&#39;s Spartüte
+                              <br />
+                              <span class="zeitraum">
+                                 (immer ab mittwochs):
+                              </span>
+                           </strong>
+                        </p>
+                        <p class="angebot-subhead">{tuete.eins}</p>
+                        <p class="angebot-subhead">{tuete.zwei}</p>
+                     </div>
+                     <div class="col-xs-6">
+                        <p class="angebot-preis-tuete">
+                           {tuete.einheit} = {tuete.preis} €
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            )
+         }
+
+         <!-- ANCHOR - ABSPANN -->
+         <div class="well download-button text-center angebote">
+            <p set:html={gruss.grussformel} />
+            <p>Familie Werner Schulte & Mitarbeiter</p>
+            <a href="http://www.schulte-schmeckt.de">www.schulte-schmeckt.de</a>
+            <p>TEL.: 05152 / 8748 in Zersen</p>
+
+            <!-- ANCHOR - DOWNLOAD SCHULTE ANGEBOTE -->
+            <a
+               class="btn btn-primary"
+               href={`/angebote/schulte/angebot-kw-${angebot.kw}-${angebot.jahr}.pdf`}
+               >Dieses Angebot als PDF runterladen</a
+            >
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,116 @@
+---
+// Wenn der Titel von n1 leer ist, wird der Inhalt nicht angezeigt
+const n1 = {
+   titel: "",
+   datum: "Montag, 5. Februar um 15 Uhr",
+};
+// Wenn der Titel von n 2leer ist, wird der Inhalt nicht angezeigt
+const n2 = {
+   titel: "",
+   datum: "Freitag, 9. Februar um 19 Uhr",
+};
+const n3 = {
+   text: "Wenn Sie sich als ehrenamtlicher Mitarbeiter an dem Bringdienst beteiligen möchten, melden Sie sich bitte im Dorfladen!",
+};
+const n4 = {
+   text: "Freies <strong>WLAN</strong> im Dorfladen!",
+};
+const n5 = {
+   text: "Auf unsere Annahmestelle für die Reinigung Ihrer Kleider möchten wir hinweisen.",
+};
+---
+
+<style>
+   :root {
+      --well-color: #f5f5f5;
+      --color1: color-mix(in srgb, var(--well-color) 80%, black);
+   }
+   .panel-body button {
+      margin-top: 2rem;
+   }
+   .panel-body button a {
+      color: white;
+   }
+   .well-dark {
+      background-color: var(--color1);
+      color: #111111;
+   }
+   .balance {
+      text-wrap: balance;
+   }
+</style>
+
+<div class="row aufruf margin-top-60">
+   <!-- ANKÜNDIGUNG 1 -->
+   <!-- Wenn der Titel von n1 leer ist, wird der Inhalt nicht angezeigt -->
+   {
+      n1.titel && (
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bottom-none christmas">
+            <div class="well-dark panel panel-default">
+               <div class="panel-body text-center">
+                  <p>
+                     <strong>{n1.titel}</strong>
+                  </p>
+                  <p>{n1.datum}</p>
+               </div>
+            </div>
+         </div>
+      )
+   }
+
+   <!-- ANKÜNDIGUNG 2 -->
+   <!-- Wenn der Titel von n2 leer ist, wird der Inhalt nicht angezeigt -->
+   {
+      n2.titel && (
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bottom-none christmas">
+            <div class="well-dark panel panel-default">
+               <div class="panel-body text-center">
+                  <p>
+                     <strong>{n2.titel}</strong>
+                  </p>
+                  <p>{n2.datum}</p>
+               </div>
+            </div>
+         </div>
+      )
+   }
+
+   <!-- ANKÜNDIGUNG 3 -->
+   {
+      n3.text && (
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bottom-none christmas">
+            <div class="panel panel-default well">
+               <div class="panel-body text-center">
+                  <p class="balance" set:html={n3.text} />
+               </div>
+            </div>
+         </div>
+      )
+   }
+
+   <!-- ANKÜNDIGUNG 4 -->
+   {
+      n4.text && (
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bottom-none christmas">
+            <div class="panel panel-default well">
+               <div class="panel-body text-center">
+                  <p class="balance" set:html={n4.text} />
+               </div>
+            </div>
+         </div>
+      )
+   }
+
+   <!-- ANKÜNDIGUNG 5 -->
+   {
+      n5.text && (
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bottom-none christmas">
+            <div class="panel panel-default well">
+               <div class="panel-body text-center">
+                  <p class="balance" set:html={n5.text} />
+               </div>
+            </div>
+         </div>
+      )
+   }
+</div>

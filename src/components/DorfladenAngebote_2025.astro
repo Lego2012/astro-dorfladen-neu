@@ -1,0 +1,60 @@
+---
+const jahr = "25";
+const kw = "50-51";
+const vorhanden = true;
+
+const texte = {
+	vorhanden: "Die neuen Angebote des Dorfladens für Sie:",
+	nichtvorhanden: "Die neuen Angebote des Dorfladens in Kürze hier für Sie",
+	download: "Dieses Angebot als PDF-Datei runterladen",
+};
+---
+
+<style>
+	h2 {
+		text-align: center;
+		margin-top: 6rem;
+		margin-bottom: 3rem;
+	}
+</style>
+
+<!-- Die neuen Dorfladen Grohnde Angebote -->
+{vorhanden ? <h2>{texte.vorhanden}</h2> : <h2>{texte.nichtvorhanden}</h2>}
+
+{
+	vorhanden && (
+		<>
+			<img
+				id="seite-eins"
+				class="img-responsive bilder-schulte"
+				src={`/angebote/dorfladen/dorfladen-grohnde_${kw}_${jahr}-1.jpg`}
+				alt="Angebote Dorfladen in Grohnde"
+			/>
+			<img
+				id="seite-zwei"
+				class="img-responsive bilder-schulte"
+				src={`/angebote/dorfladen/dorfladen-grohnde_${kw}_${jahr}-2.jpg`}
+				alt="Angebote Dorfladen in Grohnde"
+			/>
+			<img
+				id="seite-drei"
+				class="img-responsive bilder-schulte"
+				src={`/angebote/dorfladen/dorfladen-grohnde_${kw}_${jahr}-3.jpg`}
+				alt="Angebote Dorfladen in Grohnde"
+			/>
+			<img
+				id="seite-vier"
+				class="img-responsive bilder-schulte"
+				src={`/angebote/dorfladen/dorfladen-grohnde_${kw}_${jahr}-4.jpg`}
+				alt="Angebote Dorfladen in Grohnde"
+			/>
+		</>
+		<!-- TODO: Check auf richtigen Downloadpfad am Jahresende -->
+		<!-- Download Dorfladen Grohnde Angebote -->
+		<div id="schulte" class="text-center download-button">
+			<a href={`/angebote/dorfladen/dorfladen-grohnde_${kw}_${jahr}.pdf`}>
+				<div class="btn btn-primary">{texte.download}</div>
+			</a>
+		</div>
+	)
+}
